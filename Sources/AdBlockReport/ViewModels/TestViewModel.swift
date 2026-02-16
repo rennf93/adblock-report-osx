@@ -1,4 +1,5 @@
 import Foundation
+import Network
 import SwiftData
 import Observation
 
@@ -32,6 +33,7 @@ final class TestViewModel {
     var latestReport: TestReport?
 
     var elapsedTime: TimeInterval = 0
+    var networkUnavailable = false
 
     // MARK: - Settings
 
@@ -42,6 +44,22 @@ final class TestViewModel {
     private let testService = AdBlockTestService()
     private var testTask: Task<Void, Never>?
     private var timerTask: Task<Void, Never>?
+    private let networkMonitor = NWPathMonitor()
+
+    // MARK: - Lifecycle
+
+    init() {
+        networkMonitor.pathUpdateHandler = { [weak self] path in
+            Task { @MainActor [weak self] in
+                self?.networkUnavailable = path.status != .satisfied
+            }
+        }
+        networkMonitor.start(queue: DispatchQueue(label: "com.adblock-report.network-monitor"))
+    }
+
+    deinit {
+        networkMonitor.cancel()
+    }
 
     // MARK: - Computed
 
@@ -57,24 +75,11 @@ final class TestViewModel {
         }
     }
 
-    var scoreLevel: ScoreLevel {
-        ScoreLevel(score: overallScore)
-    }
-
-    enum ScoreLevel {
-        case good, moderate, poor
-
-        init(score: Double) {
-            if score >= 60 { self = .good }
-            else if score >= 30 { self = .moderate }
-            else { self = .poor }
-        }
-    }
-
     // MARK: - Actions
 
     func startTest(modelContext: ModelContext) {
         guard state != .running else { return }
+        guard !networkUnavailable else { return }
 
         let domains = domainsToTest
         totalCount = domains.count
@@ -88,7 +93,7 @@ final class TestViewModel {
             let start = Date()
             while !Task.isCancelled {
                 try? await Task.sleep(for: .milliseconds(100))
-                self?.elapsedTime = Date().timeIntervalSince(start)
+                await MainActor.run { self?.elapsedTime = Date().timeIntervalSince(start) }
             }
         }
 
@@ -99,12 +104,15 @@ final class TestViewModel {
             let testResults = await testService.runTests(
                 domains: domains
             ) { [weak self] progress in
-                Task { @MainActor in
-                    self?.completedCount = progress.completed
-                    self?.progress = Double(progress.completed) / Double(progress.total)
-                    self?.currentDomain = progress.latestResult.domain.hostname
+                Task { @MainActor [weak self] in
+                    guard let self else { return }
+                    self.completedCount = progress.completed
+                    self.progress = Double(progress.completed) / Double(progress.total)
+                    self.currentDomain = progress.latestResult.domain.hostname
                 }
             }
+
+            guard !Task.isCancelled else { return }
 
             self.timerTask?.cancel()
             self.results = testResults

@@ -68,35 +68,34 @@ actor AdBlockTestService {
         request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
 
         do {
-            let (_, response) = try await session.data(for: request)
+            let (_, _) = try await session.data(for: request)
             let elapsed = (CFAbsoluteTimeGetCurrent() - startTime) * 1000
-
-            if response is HTTPURLResponse {
-                return TestResult(domain: domain, isBlocked: false, responseTimeMs: elapsed)
-            }
-
+            // Any successful response means DNS resolved — domain is not blocked
             return TestResult(domain: domain, isBlocked: false, responseTimeMs: elapsed)
         } catch {
             let elapsed = (CFAbsoluteTimeGetCurrent() - startTime) * 1000
             let urlError = error as? URLError
 
-            // These error codes indicate DNS/connection-level blocking
+            // DNS/connection-level errors that indicate the domain is blocked
             let blockingErrors: Set<URLError.Code> = [
                 .timedOut,
                 .cannotFindHost,
                 .cannotConnectToHost,
                 .networkConnectionLost,
                 .dnsLookupFailed,
-                .notConnectedToInternet,
                 .secureConnectionFailed,
             ]
 
             let isBlocked: Bool
-            if let code = urlError?.code, blockingErrors.contains(code) {
-                isBlocked = true
+            if urlError?.code == .notConnectedToInternet {
+                // No internet is a connectivity problem, not blocking — treat as not blocked
+                // to avoid false positives when offline
+                isBlocked = false
             } else if urlError?.code == .serverCertificateUntrusted {
                 // Certificate error means DNS resolved successfully — not blocked
                 isBlocked = false
+            } else if let code = urlError?.code, blockingErrors.contains(code) {
+                isBlocked = true
             } else {
                 isBlocked = true
             }

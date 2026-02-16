@@ -11,7 +11,7 @@ struct ResultsView: View {
                     .padding(.top, 16)
 
                 VStack(spacing: 4) {
-                    Text(summaryText)
+                    Text(ScoreThreshold.label(for: viewModel.overallScore))
                         .font(.headline)
                     Text("\(viewModel.results.filter(\.isBlocked).count) of \(viewModel.results.count) domains blocked")
                         .font(.subheadline)
@@ -50,14 +50,6 @@ struct ResultsView: View {
             if let report = viewModel.latestReport {
                 ShareSheet(text: ExportService.generateTextReport(report))
             }
-        }
-    }
-
-    private var summaryText: String {
-        switch viewModel.scoreLevel {
-        case .good: "Strong Protection"
-        case .moderate: "Moderate Protection"
-        case .poor: "Weak Protection"
         }
     }
 }

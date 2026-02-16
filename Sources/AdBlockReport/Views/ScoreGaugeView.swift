@@ -6,12 +6,6 @@ struct ScoreGaugeView: View {
 
     @State private var displayedScore: Double = 0
 
-    private var scoreColor: Color {
-        if score >= 60 { .green }
-        else if score >= 30 { .orange }
-        else { .red }
-    }
-
     var body: some View {
         ZStack {
             Circle()
@@ -21,7 +15,7 @@ struct ScoreGaugeView: View {
             Circle()
                 .trim(from: 0, to: displayedScore / 100)
                 .stroke(style: StrokeStyle(lineWidth: 16, lineCap: .round))
-                .foregroundStyle(scoreColor)
+                .foregroundStyle(ScoreThreshold.color(for: score))
                 .rotationEffect(.degrees(-90))
 
             VStack(spacing: 2) {
@@ -34,6 +28,9 @@ struct ScoreGaugeView: View {
                     .foregroundStyle(.secondary)
             }
         }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(Int(score))% blocked")
+        .accessibilityValue(ScoreThreshold.label(for: score))
         .onAppear {
             if animateOnAppear {
                 withAnimation(.easeOut(duration: 1.2)) {
@@ -41,6 +38,15 @@ struct ScoreGaugeView: View {
                 }
             } else {
                 displayedScore = score
+            }
+        }
+        .onChange(of: score) { _, newValue in
+            if animateOnAppear {
+                withAnimation(.easeOut(duration: 1.2)) {
+                    displayedScore = newValue
+                }
+            } else {
+                displayedScore = newValue
             }
         }
     }

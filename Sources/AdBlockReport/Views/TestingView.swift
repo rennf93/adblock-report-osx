@@ -30,6 +30,9 @@ struct TestingView: View {
                 }
             }
             .frame(width: 200, height: 200)
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel("Test progress")
+            .accessibilityValue("\(Int(viewModel.progress * 100))%, \(viewModel.completedCount) of \(viewModel.totalCount) domains tested")
 
             VStack(spacing: 8) {
                 Text("Testing...")

@@ -29,6 +29,8 @@ struct DomainResultRow: View {
         }
         .padding(.vertical, 4)
         .padding(.horizontal, 8)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(result.domain.provider), \(result.domain.hostname), \(result.isBlocked ? "blocked" : "exposed")")
     }
 }
 

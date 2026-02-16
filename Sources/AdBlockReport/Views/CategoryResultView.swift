@@ -12,12 +12,6 @@ struct CategoryResultView: View {
         results.isEmpty ? 0 : (Double(blockedCount) / Double(results.count)) * 100
     }
 
-    private var scoreColor: Color {
-        if score >= 60 { .green }
-        else if score >= 30 { .orange }
-        else { .red }
-    }
-
     var body: some View {
         DisclosureGroup(isExpanded: $isExpanded) {
             LazyVStack(spacing: 2) {
@@ -43,8 +37,10 @@ struct CategoryResultView: View {
 
                 Text("\(Int(score))%")
                     .font(.title3.bold().monospacedDigit())
-                    .foregroundStyle(scoreColor)
+                    .foregroundStyle(ScoreThreshold.color(for: score))
             }
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel("\(category.rawValue), \(blockedCount) of \(results.count) blocked, \(Int(score))%")
         }
     }
 }

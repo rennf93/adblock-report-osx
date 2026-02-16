@@ -45,6 +45,12 @@ struct HomeView: View {
 
             Spacer()
 
+            if viewModel.networkUnavailable {
+                Label("No network connection", systemImage: "wifi.slash")
+                    .font(.subheadline)
+                    .foregroundStyle(.red)
+            }
+
             Button {
                 viewModel.startTest(modelContext: modelContext)
             } label: {
@@ -55,6 +61,7 @@ struct HomeView: View {
             }
             .buttonStyle(.borderedProminent)
             .controlSize(.large)
+            .disabled(viewModel.networkUnavailable)
             .padding(.horizontal, 40)
             .padding(.bottom, 40)
         }

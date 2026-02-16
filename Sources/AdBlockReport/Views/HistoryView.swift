@@ -34,7 +34,7 @@ struct HistoryView: View {
 
                             Text("\(Int(report.overallScore))%")
                                 .font(.title3.bold().monospacedDigit())
-                                .foregroundStyle(scoreColor(for: report.overallScore))
+                                .foregroundStyle(ScoreThreshold.color(for: report.overallScore))
                         }
                     }
                 }
@@ -46,12 +46,6 @@ struct HistoryView: View {
             }
         }
         .navigationTitle("History")
-    }
-
-    private func scoreColor(for score: Double) -> Color {
-        if score >= 60 { .green }
-        else if score >= 30 { .orange }
-        else { .red }
     }
 }
 
