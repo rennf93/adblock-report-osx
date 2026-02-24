@@ -3,23 +3,23 @@
 import PackageDescription
 
 let package = Package(
-    name: "AdBlockReport",
+    name: "AdOrNot",
     platforms: [
         .iOS(.v18),
         .macOS(.v15),
     ],
     targets: [
         .executableTarget(
-            name: "AdBlockReport",
-            path: "Sources/AdBlockReport",
+            name: "AdOrNot",
+            path: "Sources/AdOrNot",
             resources: [
                 .process("Resources"),
             ]
         ),
         .testTarget(
-            name: "AdBlockReportTests",
-            dependencies: ["AdBlockReport"],
-            path: "Tests/AdBlockReportTests"
+            name: "AdOrNotTests",
+            dependencies: ["AdOrNot"],
+            path: "Tests/AdOrNotTests"
         ),
     ],
     swiftLanguageModes: [.v5]
