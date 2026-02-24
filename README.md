@@ -1,4 +1,4 @@
-# AdBlock Report
+# AdOrNot
 
 A native iOS and macOS app that tests the effectiveness of your DNS-level ad blocker or content filter.
 
@@ -24,7 +24,7 @@ If a domain connection fails (DNS resolution blocked), it counts as blocked. You
 ## Building
 
 1. Clone the repository
-2. Open `AdBlockReport.xcodeproj` in Xcode
+2. Open `AdOrNot.xcodeproj` in Xcode
 3. Select your target device (iOS Simulator or My Mac)
 4. Build and run (Cmd+R)
 

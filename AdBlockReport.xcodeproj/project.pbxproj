@@ -12,36 +12,36 @@
 			containerPortal = 4A9B2E0F2D4C8A0000000001 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 4A9B2E0F2D4C8A0000000008;
-			remoteInfo = AdBlockReport;
+			remoteInfo = AdOrNot;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4A9B2E0F2D4C8A0000000004 /* AdBlockReport.app */ = {
+		4A9B2E0F2D4C8A0000000004 /* AdOrNot.app */ = {
 			isa = PBXFileReference;
 			explicitFileType = wrapper.application;
 			includeInIndex = 0;
-			path = AdBlockReport.app;
+			path = AdOrNot.app;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		4A9B2E0F2D4C8A0000000005 /* AdBlockReportTests.xctest */ = {
+		4A9B2E0F2D4C8A0000000005 /* AdOrNotTests.xctest */ = {
 			isa = PBXFileReference;
 			explicitFileType = wrapper.cfbundle;
 			includeInIndex = 0;
-			path = AdBlockReportTests.xctest;
+			path = AdOrNotTests.xctest;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		4A9B2E0F2D4C8A0000000006 /* AdBlockReport */ = {
+		4A9B2E0F2D4C8A0000000006 /* AdOrNot */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Sources/AdBlockReport;
+			path = Sources/AdOrNot;
 			sourceTree = "<group>";
 		};
-		4A9B2E0F2D4C8A0000000007 /* AdBlockReportTests */ = {
+		4A9B2E0F2D4C8A0000000007 /* AdOrNotTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Tests/AdBlockReportTests;
+			path = Tests/AdOrNotTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -67,8 +67,8 @@
 		4A9B2E0F2D4C8A0000000002 = {
 			isa = PBXGroup;
 			children = (
-				4A9B2E0F2D4C8A0000000006 /* AdBlockReport */,
-				4A9B2E0F2D4C8A0000000007 /* AdBlockReportTests */,
+				4A9B2E0F2D4C8A0000000006 /* AdOrNot */,
+				4A9B2E0F2D4C8A0000000007 /* AdOrNotTests */,
 				4A9B2E0F2D4C8A0000000003 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,8 +76,8 @@
 		4A9B2E0F2D4C8A0000000003 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4A9B2E0F2D4C8A0000000004 /* AdBlockReport.app */,
-				4A9B2E0F2D4C8A0000000005 /* AdBlockReportTests.xctest */,
+				4A9B2E0F2D4C8A0000000004 /* AdOrNot.app */,
+				4A9B2E0F2D4C8A0000000005 /* AdOrNotTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,9 +85,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4A9B2E0F2D4C8A0000000008 /* AdBlockReport */ = {
+		4A9B2E0F2D4C8A0000000008 /* AdOrNot */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4A9B2E0F2D4C8A0000000019 /* Build configuration list for PBXNativeTarget "AdBlockReport" */;
+			buildConfigurationList = 4A9B2E0F2D4C8A0000000019 /* Build configuration list for PBXNativeTarget "AdOrNot" */;
 			buildPhases = (
 				4A9B2E0F2D4C8A000000000A /* Sources */,
 				4A9B2E0F2D4C8A000000000B /* Frameworks */,
@@ -98,18 +98,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				4A9B2E0F2D4C8A0000000006 /* AdBlockReport */,
+				4A9B2E0F2D4C8A0000000006 /* AdOrNot */,
 			);
-			name = AdBlockReport;
+			name = AdOrNot;
 			packageProductDependencies = (
 			);
-			productName = AdBlockReport;
-			productReference = 4A9B2E0F2D4C8A0000000004 /* AdBlockReport.app */;
+			productName = AdOrNot;
+			productReference = 4A9B2E0F2D4C8A0000000004 /* AdOrNot.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4A9B2E0F2D4C8A0000000009 /* AdBlockReportTests */ = {
+		4A9B2E0F2D4C8A0000000009 /* AdOrNotTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4A9B2E0F2D4C8A000000001A /* Build configuration list for PBXNativeTarget "AdBlockReportTests" */;
+			buildConfigurationList = 4A9B2E0F2D4C8A000000001A /* Build configuration list for PBXNativeTarget "AdOrNotTests" */;
 			buildPhases = (
 				4A9B2E0F2D4C8A000000000D /* Sources */,
 				4A9B2E0F2D4C8A000000000E /* Frameworks */,
@@ -121,13 +121,13 @@
 				4A9B2E0F2D4C8A0000000010 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				4A9B2E0F2D4C8A0000000007 /* AdBlockReportTests */,
+				4A9B2E0F2D4C8A0000000007 /* AdOrNotTests */,
 			);
-			name = AdBlockReportTests;
+			name = AdOrNotTests;
 			packageProductDependencies = (
 			);
-			productName = AdBlockReportTests;
-			productReference = 4A9B2E0F2D4C8A0000000005 /* AdBlockReportTests.xctest */;
+			productName = AdOrNotTests;
+			productReference = 4A9B2E0F2D4C8A0000000005 /* AdOrNotTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -149,7 +149,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4A9B2E0F2D4C8A0000000018 /* Build configuration list for PBXProject "AdBlockReport" */;
+			buildConfigurationList = 4A9B2E0F2D4C8A0000000018 /* Build configuration list for PBXProject "AdOrNot" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -163,8 +163,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4A9B2E0F2D4C8A0000000008 /* AdBlockReport */,
-				4A9B2E0F2D4C8A0000000009 /* AdBlockReportTests */,
+				4A9B2E0F2D4C8A0000000008 /* AdOrNot */,
+				4A9B2E0F2D4C8A0000000009 /* AdOrNotTests */,
 			);
 		};
 /* End PBXProject section */
@@ -206,7 +206,7 @@
 /* Begin PBXTargetDependency section */
 		4A9B2E0F2D4C8A0000000010 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4A9B2E0F2D4C8A0000000008 /* AdBlockReport */;
+			target = 4A9B2E0F2D4C8A0000000008 /* AdOrNot */;
 			targetProxy = 4A9B2E0F2D4C8A0000000011 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -341,14 +341,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Sources/AdBlockReport/Resources/AdBlockReport.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Sources/AdOrNot/Resources/AdOrNot.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "AdBlock Report";
+				INFOPLIST_KEY_CFBundleDisplayName = "AdOrNot";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.AdBlockReport;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.AdOrNot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -363,14 +363,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Sources/AdBlockReport/Resources/AdBlockReport.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Sources/AdOrNot/Resources/AdOrNot.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "AdBlock Report";
+				INFOPLIST_KEY_CFBundleDisplayName = "AdOrNot";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.AdBlockReport;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.AdOrNot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -388,14 +388,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.AdBlockReportTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.AdOrNotTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdBlockReport.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AdBlockReport";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdOrNot.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AdOrNot";
 			};
 			name = Debug;
 		};
@@ -407,21 +407,21 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.AdBlockReportTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.AdOrNotTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdBlockReport.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AdBlockReport";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdOrNot.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AdOrNot";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4A9B2E0F2D4C8A0000000018 /* Build configuration list for PBXProject "AdBlockReport" */ = {
+		4A9B2E0F2D4C8A0000000018 /* Build configuration list for PBXProject "AdOrNot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4A9B2E0F2D4C8A0000000012 /* Debug */,
@@ -430,7 +430,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4A9B2E0F2D4C8A0000000019 /* Build configuration list for PBXNativeTarget "AdBlockReport" */ = {
+		4A9B2E0F2D4C8A0000000019 /* Build configuration list for PBXNativeTarget "AdOrNot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4A9B2E0F2D4C8A0000000014 /* Debug */,
@@ -439,7 +439,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4A9B2E0F2D4C8A000000001A /* Build configuration list for PBXNativeTarget "AdBlockReportTests" */ = {
+		4A9B2E0F2D4C8A000000001A /* Build configuration list for PBXNativeTarget "AdOrNotTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4A9B2E0F2D4C8A0000000016 /* Debug */,
