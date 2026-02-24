@@ -1,12 +1,12 @@
-// swift-tools-version: 6.1
+// swift-tools-version: 6.0
 
 import PackageDescription
 
 let package = Package(
     name: "AdBlockReport",
     platforms: [
-        .iOS(.v26),
-        .macOS(.v26),
+        .iOS(.v18),
+        .macOS(.v15),
     ],
     targets: [
         .executableTarget(

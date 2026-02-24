@@ -24,9 +24,9 @@ If a domain connection fails (DNS resolution blocked), it counts as blocked. You
 ## Building
 
 1. Clone the repository
-2. Open `Package.swift` in Xcode
-3. Select your target (iOS or macOS)
-4. Build and run
+2. Open `AdBlockReport.xcodeproj` in Xcode
+3. Select your target device (iOS Simulator or My Mac)
+4. Build and run (Cmd+R)
 
 ## Architecture
 
